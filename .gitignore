@@ -1,1 +1,5 @@
-csci32-Tinoco.code-workspace
+node_modules
+dist
+
+# Turborepo
+.turbo
