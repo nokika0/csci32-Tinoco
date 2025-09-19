@@ -11,7 +11,12 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
-    "./*": "./dist/*.js"
+    "./*": "./dist/*.js",
+    "./card": "./src/card.tsx",
+    "./code": "./src/code.tsx",
+    "./size": "./src/size.tsx",
+    "./variant": "./src/variant.tsx",
+    "./button": "./src/button.tsx"
   },
   "scripts": {
     "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
