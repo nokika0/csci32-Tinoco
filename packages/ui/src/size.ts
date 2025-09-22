@@ -22,9 +22,9 @@ export function getInputSizeStyles(size: Size) {
       return 'px-1  text-sm rounded-md shadow-lg border-2 '
 
     case Size.MEDIUM:
-      return 'px-1  text-base rounded-md shadow-lg border-2 '
+      return 'px-2  text-base rounded-md shadow-lg border-2 '
 
     case Size.LARGE:
-      return 'px-1  text-lg rounded-md shadow-lg border-2  '
+      return 'px-4  text-lg rounded-md shadow-lg border-2  '
   }
 }

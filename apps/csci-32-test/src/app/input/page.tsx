@@ -13,10 +13,18 @@ export default function InputPage() {
   return (
     <div className="p-24">
       <div className="flex gap-4 justify-center flex-row flex-wrap">
-        <div className="flex gap-2">
-          <Input value={name} setValue={setName} variant={Variant.PRIMARY} size={Size.SMALL} name="name" id="name" />
+        <div className="flex gap-2 ">
+          <Input
+            value={name}
+            placeholder="Enter your name"
+            setValue={setName}
+            variant={Variant.PRIMARY}
+            size={Size.SMALL}
+            name="name"
+            id="name"
+          />
           <Button variant={Variant.PRIMARY} onClick={() => alert(`Hello there: ${name}`)}>
-            NAME
+            Submit
           </Button>
         </div>
         <div className="flex gap-2">
@@ -25,25 +33,26 @@ export default function InputPage() {
             setValue={setMovie}
             variant={Variant.SECONDARY}
             size={Size.MEDIUM}
+            placeholder="Enter your favorite movie"
             name="movie"
             id="movie"
           />
           <Button variant={Variant.SECONDARY} onClick={() => alert(`${movie}, Sounds like a really good movie`)}>
-            MOVIE
+            Submit
           </Button>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 ">
           <Input
             value={character}
             setValue={setCharacter}
             variant={Variant.TERTIARY}
             size={Size.LARGE}
-            placeholder="Your favorite character"
+            placeholder="Enter a favorite character"
             name="character"
             id="character"
           />
           <Button variant={Variant.TERTIARY} onClick={() => alert(`So your character is ${character}?`)}>
-            CHARACTER
+            Submit
           </Button>
         </div>
       </div>

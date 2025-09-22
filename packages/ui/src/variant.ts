@@ -44,9 +44,9 @@ export function getVariantInputTextStyles(variant: Variant) {
     case Variant.PRIMARY:
       return 'text-black'
     case Variant.SECONDARY:
-      return 'text-white'
+      return 'text-black'
     case Variant.TERTIARY:
-      return 'text-white'
+      return 'text-black'
   }
 }
 
