@@ -1,8 +1,15 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { Size } from './size'
-import { Variant } from './variant'
+import { getInputSizeStyles, getSizeStyles, Size } from './size'
+import {
+  getVariantBackgroundStyles,
+  getVariantOutlineStyles,
+  getVariantInputTextStyles,
+  getVariantBorderStyles,
+  Variant,
+} from './variant'
+import { getCommonStyles } from './tokens'
 
 interface ButtonProps {
   children: ReactNode
@@ -21,38 +28,16 @@ export const Button = ({
   size = Size.MEDIUM,
   variant = Variant.PRIMARY,
 }: ButtonProps) => {
-  let sizeCssClasses = ''
+  const sizeCssClasses = getSizeStyles(size)
 
-  switch (size) {
-    case Size.SMALL:
-      sizeCssClasses = 'px-3 py-1 text-sm'
-      break
-    case Size.MEDIUM:
-      sizeCssClasses = 'px-4 py-2 text-base'
-      break
-    case Size.LARGE:
-      sizeCssClasses = 'px-5 py-3 text-lg'
-      break
-  }
+  const variantBackgroundCssClasses = getVariantBackgroundStyles(variant)
+  const variantOutlineCssClasses = getVariantOutlineStyles(variant)
+  const variantTextCssClasses = getVariantInputTextStyles(variant)
+  const variantBorderCssClasses = getVariantBorderStyles(variant)
 
-  let variantCssClasses = ''
+  const commonCssClasses = getCommonStyles()
 
-  switch (variant) {
-    case Variant.PRIMARY:
-      variantCssClasses = 'bg-blue-500 text-black hover:bg-blue-600 cursor-pointer active:scale-95'
-      break
-    case Variant.SECONDARY:
-      variantCssClasses = 'bg-gray-500 text-white hover:bg-gray-600 cursor-pointer active:scale-95'
-      break
-    case Variant.TERTIARY:
-      variantCssClasses = 'bg-emerald-500 text-white hover:bg-emerald-700 cursor-pointer active:scale-95'
-      break
-  }
-
-  const commonCssClasses =
-    'focus:outline-2 outline-black rounded-md shadow-md shadow-black transition-colors duration-150'
-
-  const completedCssClasses = `${sizeCssClasses} ${variantCssClasses} ${commonCssClasses} ${className}`
+  const completedCssClasses = `${sizeCssClasses}  ${variantBackgroundCssClasses} ${variantOutlineCssClasses} ${variantTextCssClasses} ${variantBorderCssClasses} ${commonCssClasses} ${className}`
 
   return href ? (
     <a href={href} className={completedCssClasses}>
