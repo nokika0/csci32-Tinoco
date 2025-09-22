@@ -14,8 +14,10 @@
     "./*": "./dist/*.js",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
-    "./size": "./src/size.tsx",
-    "./variant": "./src/variant.tsx",
+    "./size": "./src/size.ts",
+    "./tokens": "./src/tokens.ts",
+    "./variant": "./src/variant.ts",
+    "./input": "./src/input.tsx",
     "./button": "./src/button.tsx"
   },
   "scripts": {
