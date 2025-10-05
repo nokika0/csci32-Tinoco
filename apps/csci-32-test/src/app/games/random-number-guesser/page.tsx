@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import RandomNumberGame from './random-number-game'
 import RandomNumberGameMenu from './random-number-game-menu'
+import { getRandomInt } from '@repo/ui/math'
 
 export interface gameProps {
   min: number
@@ -17,12 +18,6 @@ export interface guessGameEngineProps {
   randomNumber: number
   maxGuesses: number
   endGame: () => void
-}
-
-export function getRandomInt({ min, max }: { min: number; max: number }) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 export default function RandomNumberGamePage() {

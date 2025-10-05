@@ -18,6 +18,7 @@
     "./tokens": "./src/tokens.ts",
     "./variant": "./src/variant.ts",
     "./input": "./src/input.tsx",
+    "./math": "./src/math.ts",
     "./button": "./src/button.tsx"
   },
   "scripts": {
