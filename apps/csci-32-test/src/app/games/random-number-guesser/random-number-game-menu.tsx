@@ -2,7 +2,7 @@
 import { Button } from '@repo/ui/button'
 
 import { guessGameProps } from './page'
-import { FormEventHandler, useState } from 'react'
+import { useState } from 'react'
 import Input from '@repo/ui/input'
 
 export default function RandomNumberGameMenu({ startGame }: guessGameProps) {
