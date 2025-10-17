@@ -15,6 +15,10 @@ export async function hashPassword(plain: string): Promise<string> {
   return bcrypt.hash(plain, rounds)
 }
 
+export async function comparePassword(plain: string, hash: string): Promise<boolean> {
+  return bcrypt.compare(plain, hash)
+}
+
 export function signToken(claims: Record<string, any>): string {
   const privateKey = readPrivateKey()
   const alg = process.env.ALGORITHM ?? 'ES256'
