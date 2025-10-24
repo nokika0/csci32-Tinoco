@@ -35,10 +35,10 @@ export default function Input({
     <input
       className={` ${sizeCssClasses} ${variantBorderCssClasses} ${variantInputTextCssClasses} ${variantOutlineCssClasses} ${commonCssClasses}`}
       name={name}
-      id={id}
       defaultValue={defaultValue}
       placeholder={placeholder}
       type={type}
+      id={id}
       value={value}
       onChange={setValue ? (newValue) => setValue(newValue.currentTarget.value) : () => {}}
     />
