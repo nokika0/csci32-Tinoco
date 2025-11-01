@@ -49,7 +49,6 @@ export default function Auth() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {isSignUpMode && (
           <Input
-            id="name"
             type="text"
             placeholder="Name (optional)"
             size={Size.LARGE}
@@ -59,7 +58,6 @@ export default function Auth() {
         )}
 
         <Input
-          id="email"
           type="email"
           placeholder="Email"
           size={Size.LARGE}
@@ -69,7 +67,6 @@ export default function Auth() {
         {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
         <Input
-          id="password"
           type="password"
           placeholder="Password"
           size={Size.LARGE}
