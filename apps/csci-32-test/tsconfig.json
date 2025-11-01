@@ -6,6 +6,9 @@
         "name": "next"
       }
     ],
+    "allowJs": true,
+    "noEmit": true,
+    "jsx": "preserve",
     "paths": {
       "@/*": ["./src/*"]
     }

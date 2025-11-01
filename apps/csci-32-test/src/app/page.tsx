@@ -1,18 +1,20 @@
-import Main from './components/main'
-import Header from './components/header'
-import { Button } from '@repo/ui/button'
+'use client'
+
+import { useAuth } from '@/hooks/useAuth'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function Home() {
-  return (
-    <>
-      <Header>
-        <div className="flex flex-row items-center gap-2">
-          <Button href="/input">INPUT PAGE</Button>
-          Test Header add site buttons later
-        </div>
-      </Header>
+  const { user } = useAuth()
+  const router = useRouter()
 
-      <Main>This is a test to see if my component is functional</Main>
-    </>
-  )
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard')
+    } else {
+      router.push('/welcome')
+    }
+  }, [user, router])
+
+  return <div>Loading...</div>
 }
