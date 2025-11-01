@@ -3,8 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../hooks/useAuth'
 import { Button } from '@repo/ui/button'
-
-import Input from '@repo/ui/input'
+import { Input } from '@repo/ui/input'
 import { Size } from '@repo/ui/size'
 import { Variant } from '@repo/ui/variant'
 
@@ -27,10 +26,10 @@ export default function Auth() {
   const onSubmit = async (data: AuthFormInputs) => {
     if (isSignUpMode) {
       const result = await signUp(data)
-      console.log('Signed up:', result)
+      if (result) console.log('Signed up successfully:', result.user)
     } else {
       const result = await signIn({ email: data.email, password: data.password })
-      console.log('Signed in:', result)
+      if (result) console.log('Signed in successfully:', result.user)
     }
   }
 
@@ -47,11 +46,11 @@ export default function Auth() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex flex-col justify-center mx-20">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {isSignUpMode && (
           <Input
+            id="name"
             type="text"
-            id=""
             placeholder="Name (optional)"
             size={Size.LARGE}
             variant={Variant.PRIMARY}
@@ -60,9 +59,9 @@ export default function Auth() {
         )}
 
         <Input
+          id="email"
           type="email"
           placeholder="Email"
-          id=""
           size={Size.LARGE}
           variant={Variant.PRIMARY}
           {...register('email', { required: 'Email is required' })}
@@ -70,8 +69,8 @@ export default function Auth() {
         {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
         <Input
+          id="password"
           type="password"
-          id=""
           placeholder="Password"
           size={Size.LARGE}
           variant={Variant.PRIMARY}
