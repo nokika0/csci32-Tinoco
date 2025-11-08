@@ -16,6 +16,14 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "generate": {
+      "cache": false,
+      "outputs": ["./src/generated/**"]
+    },
+    "generate:watch": {
+      "cache": false,
+      "dependsOn": ["generate"]
     }
   }
 }
