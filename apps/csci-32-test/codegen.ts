@@ -1,7 +1,7 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
-  schema: 'http://localhost:4000/api/graphql', // GraphQL endpoint
+  schema: 'http://127.0.0.1:4000/api/graphql', // GraphQL endpoint
   documents: ['src/**/*.{ts,tsx}', '!src/generated/**/*'],
   generates: {
     'schema.graphql': {
