@@ -3,7 +3,7 @@ import { Button } from '@repo/ui/button'
 
 import { guessGameProps } from './page'
 import { useState } from 'react'
-import Input from '@repo/ui/input'
+import { Input } from '@repo/ui/input'
 
 export default function RandomNumberGameMenu({ startGame }: guessGameProps) {
   const [showSettings, setShowSettings] = useState(false)
